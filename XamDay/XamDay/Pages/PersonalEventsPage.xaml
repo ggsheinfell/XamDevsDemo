@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:XamDay.Views;assembly=XamDay"
+             x:Class="XamDay.Pages.PersonalEventsPage">
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition
+        Height="Auto"/>
+      <RowDefinition
+        Height="Auto"/>
+      <RowDefinition
+        Height="*"/>
+    </Grid.RowDefinitions>
+    <views:HeaderView></views:HeaderView>
+    <StackLayout
+      Padding="10"
+      Grid.Row="1"
+      Spacing="10">
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <Span Text="Mes:"
+                  FontAttributes="Bold"
+                  FontSize="16"
+                  ForegroundColor="{StaticResource TitleFontColor}"/>
+            <Span
+              Text=" Noviembre"
+              ForegroundColor="{StaticResource GeneralFontColor}"
+              FontSize="16"/>
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <Span Text="Lugar:"
+                  FontAttributes="Bold"
+                  FontSize="16"
+                  ForegroundColor="{StaticResource TitleFontColor}"/>
+            <Span
+              Text=" Sede Sabaneta"
+              ForegroundColor="{StaticResource GeneralFontColor}"
+              FontSize="16"/>
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <Span Text="Cargo"
+                  FontAttributes="Bold"
+                  FontSize="16"
+                  ForegroundColor="{StaticResource TitleFontColor}"/>
+            <Span
+              Text=" Operadora"
+              ForegroundColor="{StaticResource GeneralFontColor}"
+              FontSize="16"/>
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+      <Label>
+        <Label.FormattedText>
+          <FormattedString>
+            <Span Text="Responsable:"
+                  FontAttributes="Bold"
+                  FontSize="16"
+                  ForegroundColor="{StaticResource TitleFontColor}"/>
+            <Span
+              Text=" Ximena Castaño"
+              ForegroundColor="{StaticResource GeneralFontColor}"
+              FontSize="16"/>
+          </FormattedString>
+        </Label.FormattedText>
+      </Label>
+      <BoxView
+        HeightRequest="0.5"
+        BackgroundColor="{StaticResource SeparatorColor}"/>
+    </StackLayout>
+    <Grid
+      Grid.Row="2"
+      Padding="10">
+      <ListView
+        BackgroundColor="Transparent"
+        ItemsSource="{Binding Events}"
+        ItemTemplate="{StaticResource EventItemTemplate}"
+        HasUnevenRows="True"
+        Header="{Binding}"
+        Footer="{Binding}">
+        <ListView.HeaderTemplate>
+          <DataTemplate>
+            <Grid
+              Padding="5">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+              <Label
+                Grid.Column="0"
+                Text="Día"
+                TextColor="{StaticResource GeneralFontColor}"
+                FontSize="18"
+                FontAttributes="Bold"/>
+              <Label
+                Grid.Column="1"
+                Text="Entrada"
+                TextColor="{StaticResource GeneralFontColor}"
+                FontSize="18"
+                FontAttributes="Bold"/>
+              <Label
+                Grid.Column="2"
+                HorizontalOptions="End"
+                Text="Salida"
+                TextColor="{StaticResource GeneralFontColor}"
+                FontSize="18"
+                FontAttributes="Bold"/>
+            </Grid>
+          </DataTemplate>
+        </ListView.HeaderTemplate>
+        <ListView.FooterTemplate>
+          <DataTemplate>
+            <StackLayout
+              Margin="0,5">
+              <Label
+                Text="No hay más eventos para mostrar"
+                FontAttributes="Bold"
+                XAlign="Center"/>
+            </StackLayout>
+          </DataTemplate>
+        </ListView.FooterTemplate>
+      </ListView>
+    </Grid>
+  </Grid>
+
+</ContentPage>

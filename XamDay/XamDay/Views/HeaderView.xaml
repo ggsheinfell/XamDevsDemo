@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamDay.Views.HeaderView">
+<Grid
+      Padding="10,20"
+      ColumnSpacing="10"
+      BackgroundColor="{StaticResource MenuHeaderColor}"
+      Grid.Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition
+          Width="Auto"/>
+        <ColumnDefinition
+          Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Image
+        HeightRequest="60"
+        Grid.Column="0"
+        Source="user.png"/>
+      <StackLayout
+        Spacing="0"
+        Grid.Column="1">
+        <Label
+          Text="Laura Lopez"
+          FontSize="20"
+          TextColor="{StaticResource MenuHeaderFontColor}"/>
+        <Label
+          Font="18"
+          Text="laura@correo.com"
+          TextColor="{StaticResource MenuHeaderFontColor}"/>
+      </StackLayout>
+    </Grid>
+</ContentView>

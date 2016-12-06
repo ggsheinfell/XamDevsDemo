@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"            
+             x:Class="XamDay.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <!-- Colors -->
+      <Color x:Key="GeneralBackgroundColor">#f2f2f2</Color>
+      <Color x:Key="MenuHeaderColor">#1c1c1c</Color>
+      <Color x:Key="MenuHeaderFontColor">#f2f2f2</Color>
+      <Color x:Key="MenuColor">#ffffff</Color>
+      <Color x:Key="MenuFontColor">#2d2d2d</Color>
+      <Color x:Key="GeneralFontColor">#000000</Color>
+      <Color x:Key="TitleFontColor">#2a93cb</Color>
+      <Color x:Key="ButtonColor">#2a93cb</Color>
+      <Color x:Key="ButtonFontColor">#ffffff</Color>
+      <Color x:Key="SeparatorColor">#000000</Color>
+
+   
+
+      <!-- Templates -->
+      <DataTemplate x:Key="MenuItemTemplate">
+        <ViewCell>            
+            <Grid
+              Padding="10"
+              ColumnSpacing="10">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                  Width="Auto"/>
+                <ColumnDefinition
+                  Width="*"/>
+              </Grid.ColumnDefinitions>
+              <Image
+                Grid.Column="0"
+                Source="{Binding Icon}"
+                HeightRequest="25" />
+              <Label
+                Grid.Column="1"
+                FontSize="18"
+                Text="{Binding Title}"
+                TextColor="{StaticResource MenuFontColor}"/>
+            </Grid> 
+        </ViewCell>
+      </DataTemplate>
+      
+      <DataTemplate x:Key="EventItemTemplate">
+        <ViewCell>
+          <Grid
+            BackgroundColor="White"
+            Padding="5">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label
+              Grid.Column="0"
+              Text="{Binding Date}"
+              TextColor="{StaticResource GeneralFontColor}"
+              FontSize="18"/>
+            <Label
+              Grid.Column="1"
+              Text="{Binding StartTime}"
+              TextColor="{StaticResource GeneralFontColor}"
+              FontSize="18"/>
+            <Label
+              Grid.Column="2"
+              HorizontalOptions="End"
+              Text="{Binding EndTime}"
+              TextColor="{StaticResource GeneralFontColor}"
+              FontSize="18"/>
+          </Grid>
+        </ViewCell>
+      </DataTemplate>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
